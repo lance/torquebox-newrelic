@@ -1,0 +1,19 @@
+source :rubygems
+
+gem 'rails'        , "2.3.11"
+gem 'haml'         , '3.1.4'
+
+group :torquebox do
+  gem 'torquebox', '2.0.0.cr1'
+  gem 'torquebox-rake-support', '2.0.0.cr1'
+  gem 'activerecord-jdbc-adapter'
+  gem 'jdbc-sqlite3'
+  gem 'sqlite3'
+end
+
+
+group :monitoring do
+  gem 'newrelic_rpm'
+end
+
+

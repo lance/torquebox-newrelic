@@ -1,0 +1,16 @@
+!!!
+%html{:lang=>'en'}
+  %head
+    %link{:rel=>'stylesheet', :type=>'text/css', :href=>'/styles.css'}
+    %script{:src=>'http://code.jquery.com/jquery-1.6.4.min.js'}
+    %script{:src=>'/widgets.js'}
+    %title Widget Catalogue
+
+  %body
+    #container
+      #header
+        %h1 Widget Catalog
+      #content
+        =yield
+        %div{:style=>'clear:both'}
+

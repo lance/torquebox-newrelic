@@ -1,0 +1,40 @@
+#welcome
+  Hello
+  .new-relic-info
+    Your New Relic dispatcher: 
+    = @dispatcher
+    %br
+    Your New Relic agent:
+    = @agent.inspect
+
+#body
+  #widget-list
+    %h2 Widgets
+    %ul
+      - @widgets.each do |widget|
+        %li{:id=>widget.id}
+          %h3.name=widget.name
+          %span.display
+            %a.toggle{:href=>'#'} Edit
+            \|
+            %a.delete{:href=>'#'} Delete
+
+          %span.editor{:style=>'display:none'}
+            %form{:action=>"/widget/#{widget.id}", :method=>:post, :style=>'display:inline'}
+              %p
+                %input{:type=>:hidden, :name=>'_method', :value=>'put'}
+                %label{:for=>'widget[name]'} 
+                  Name:
+                %input{:type=>'text', :name=>'widget[name]', :value=>widget.name}
+              %input{:type=>'submit'}
+            %a.toggle{:href=>'#'} Cancel
+            
+
+  #widget-form
+    %h2 Add a Widget
+    %form{:method=>:post, :action=>'/widget'}
+      %p
+        %label{:for=>'widget[name]'} Name
+        %input{:type=>'text', :name=>'widget[name]'} 
+      %p
+        %input{:type=>'submit'}

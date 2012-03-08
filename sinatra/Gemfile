@@ -1,0 +1,31 @@
+source :rubygems
+
+TORQUEBOX_VERSION = "2.0.0.cr1"
+
+gem 'bundler'
+gem 'rake', '0.9.2'
+gem 'sinatra', '~>1.2.6'
+gem 'newrelic_rpm'
+
+# DataMapper
+group :datamapper do
+  gem 'dm-core', '~>1.1'
+  gem 'dm-types', '~>1.1'
+  gem 'dm-timestamps', '~>1.1'
+  gem 'dm-migrations', '~>1.1'
+  gem 'dm-sqlite-adapter', '~>1.1'
+  gem 'sqlite3'
+end
+
+# TorqueBox
+group :torquebox do
+  gem 'torquebox', '2.0.0.cr1'
+  gem 'torquebox-rake-support', '2.0.0.cr1'
+end
+
+# Presentation
+group :presentation do 
+  gem 'haml', '~>3.1'
+  gem 'sass', '~>3.1'
+end
+
