@@ -7,6 +7,8 @@ For Sinatra and Rails 2.3.x applications you'll need to have
 `require "newrelic_rpm"` somewhere - prefereably towards the bottom
 of your application initialization.
 
+For Rails 3.2 all you need is to have `gem "newrelic_rpm"` in your Gemfile.
+
 ## Running the Applications
 
 You can see these applications in action yourself if you like. You'll
